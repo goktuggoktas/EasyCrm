@@ -1,0 +1,21 @@
+<%= bootstrap_form_for @product, url: products_path  do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= f.text_field :name %><br>
+    <%= f.text_area :properties %><br>
+    <%= f.number_field :price, prepend: "TL", append: ".00" %><br>
+    <%= f.text_field :link%><br>
+    <%= f.submit %>
+    <%= link_to  products_path do %>
+      <button class="btn btn-success ">Back</button>
+    <% end %>
+<% end %>

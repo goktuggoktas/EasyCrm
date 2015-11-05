@@ -1,0 +1,63 @@
+<div class="col-md-4">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <span class="badge"><%= Product.count %></span>
+      The number of products
+    </li>
+    <li class="list-group-item">
+      <span class="badge"> <%= Customer.count %></span>
+      The number of Customer
+    </li>
+    <li class="list-group-item">
+      <% @i=0 %>
+      <% @cproducts.each do |cproducts| %>
+        <% if cproducts.customer_id == nil %>
+            <% @i-1 %>
+          <% else %>
+            <% @i = @i+1 %>
+        <% end %>
+      <% end %>
+      <span class="badge"> <%= @i %></span>
+      The number of products sold
+    </li>
+  </ul>
+</div>
+<div class="col-md-4">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <span class="badge"><%=  @product.name %></span>
+      Best-selling products
+    </li>
+    <li class="list-group-item">
+      <span class="badge"> <%= @id %></span>
+      How many sold
+    </li>
+    <li class="list-group-item">
+      <span class="badge"> <%= @id * @product.price %> TL</span>
+      Earnings
+    </li>
+  </ul>
+</div>
+<div class="col-md-4">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <span class="badge"><%= @customer.name %></span>
+      Most profitable customers
+    </li>
+    <li class="list-group-item">
+      <span class="badge"> <%=@most_values%></span>
+      The number of products purchased
+    </li>
+    <li class="list-group-item">
+      <span class="badge">
+      <% @total_price = 0 %>
+      <% @customer.products.each do |product|  %>
+        <% link_to product.name , product_path(product.id) %>
+        <% @total_price = product.price + @total_price %>
+      <% end %>
+      <%= @total_price %> TL
+      </span>
+      Total Price
+    </li>
+  </ul>
+</div>

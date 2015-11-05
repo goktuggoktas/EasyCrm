@@ -1,0 +1,28 @@
+<div class="col-md-2">
+</div>
+<div class="col-md-8">
+  <h1>New Customer</h1>
+  <%= bootstrap_form_for @customer, url: customers_path do |f| %>
+    <% if @customer.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+        <ul>
+        <% @customer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <%= f.text_field :name %>
+      <%= f.text_field :website %>
+      <%= f.number_field :number %>
+      <%= f.text_field :business %>
+      <%= f.collection_check_boxes :product_ids, @products, :id, :name  %>
+      <%= f.submit %>
+      <%= link_to  customers_path do %>
+        <button class="btn btn-success ">Back</button>
+      <% end %>
+  <% end %>
+</div>
+<div class="col-md-2">
+</div>

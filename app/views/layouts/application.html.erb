@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	  <title>Forum</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css">
+		<link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	  <%= csrf_meta_tags %>
+	</head>
+	<body,>
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">KoalaPix-Cms</a>
+		    </div>
+
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+		      <ul class="nav navbar-nav">
+		        <li> <%= link_to "Anasayfa" , analizes_path %></li>
+		        <li> <%= link_to "Ürünler" , products_path %></li>
+				<li> <%= link_to "Müşteriler" , customers_path %></li>
+		      </ul>
+		      <form class="navbar-form navbar-right" role="search">
+		        <div class="form-group">
+		          <input class="form-control input-sm" placeholder="Arama.." id="inputsm" type="text">
+		        </div>
+		        <button type="submit" class="btn btn-success btn-sm">Submit</button>
+		      </form>
+		    </div>
+		  </div>
+		</nav>
+		<%= yield %>
+	</body>
+</html>
