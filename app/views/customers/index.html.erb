@@ -4,7 +4,7 @@
 </div>
 <div class="col-md-10">
   <div class="panel panel-primary">
-    <div class="panel-heading">Listing Customers</div>
+    <div class="panel-heading">Listelenen Ürünler</div>
     <div class="panel-body">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
@@ -17,12 +17,12 @@
     <table class="table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Number</th>
-        <th>Website</th>
-        <th>Business</th>
+        <th>Müşteri Adı</th>
+        <th>Numaralar</th>
+        <th>Web Sitesi</th>
+        <th>Alanı</th>
         <th>
-          Total Price
+          <b>Kazanç</b>
         </th>
         <th colspan="3"></th>
       </tr>
@@ -57,17 +57,17 @@
           </td>
           <td>
             <%= link_to customer do %>
-              <button class="btn btn-info btn-sm">Show Customer</button>
+              <button class="btn btn-info btn-sm">Müşteriyi Görüntüle</button>
             <% end %>
             </td>
             <td>
             <%= link_to edit_customer_path(customer) do %>
-              <button class="btn btn-warning btn-sm">Edit Customer</button>
+              <button class="btn btn-warning btn-sm">Müşteriyi Listele</button>
             <% end %>
             </td>
             <td>
             <%= link_to  customer, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <button class="btn btn-danger btn-sm"> Delete Customer</button>
+            <button class="btn btn-danger btn-sm">Müşteriyi Sil</button>
             <% end %>
           </td>
         </tr>

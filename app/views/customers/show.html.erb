@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Müşterinin Adı:</strong>
   <%= @customer.name %>
 </p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Numaralar:</strong>
   <%= @customer.number %>
 </p>
 
@@ -16,18 +16,18 @@
 </p>
 
 <p>
-  <strong>Business:</strong>
+  <strong>İş Alanı:</strong>
   <%= @customer.business %>
 </p>
-<p> Products </p>
+<p> Kayıtlı Ürünleri: </p>
 <% @total_price = 0 %>
 <% @customer.products.each do |product|  %>
   <%= link_to product.name , product_path(product.id) %>
   <% @total_price = product.price + @total_price %>
 <% end %><br>
 <p>
-  Total Price: <%= @total_price %>
+  Toplam Kazanç: <%= @total_price %>
 </p>
-<%= link_to 'New Product', new_product_path %><br>
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'Müşteriye Ürün Ekle', new_product_path %><br>
+<%= link_to 'Müşteriyi Düzenle', edit_customer_path(@customer) %> |
+<%= link_to 'Geri Dön', customers_path %>
